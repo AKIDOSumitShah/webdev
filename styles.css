@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;  /* Dark background for contrast */
+    margin: 0;
+}
+
+.folding-container {
+    position: relative;
+    width: 300px;       /* Adjust to match your image dimensions */
+    height: 200px;
+    perspective: 1000px;  /* Creates a 3D effect */
+}
+
+.folding-container img {
+    width: 100%;
+    height: auto;
+    transform-origin: top;  /* Folding starts from the top edge */
+    animation: foldEffect 3s infinite alternate;
+}
+
+/* Keyframes to animate the folding effect */
+@keyframes foldEffect {
+    0% {
+        transform: rotateX(0deg);   /* Image starts flat */
+    }
+    100% {
+        transform: rotateX(70deg);  /* Image folds to 70 degrees */
+    }
+}
